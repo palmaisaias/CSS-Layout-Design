@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        'header header'
+        'main-content sidebar'
+        'footer footer';
+    grid-template-columns: 1fr 1fr;
+    /* auto will adjust the row height to content and 1fr will fill the remaining available space */
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    background-color: #EDBB00;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: main-content;
+    background-color: #A50044;
+    padding: 20px;
+}
+
+.sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: sidebar;
+    color: aliceblue;
+    background-color: #004D98;
+    padding: 20px;
+}
+
+aside .log-in-button {
+    background-color: #A50044;
+    color: aliceblue;
+    border: 0;
+    width: 20%;
+    height: 4%;
+    border-radius: 20%;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-areas: 
+            'header'
+            'main-content'
+            'sidebar'
+            'footer';
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 2fr 2fr auto;
+    }
+    .log-in-button{
+        /* attempt to make the button remain the same when shown on smaller device */
+        background-color: #A50044;
+        color: aliceblue;
+        border: 0;
+        width: 20%;
+        height: 4%;
+        border-radius: 20%;
+    }
+}

@@ -1,0 +1,134 @@
+/* Basic reset for margins and paddings to remove defaults. Cool option */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* Basically the amount of space between text lines */
+    line-height: 1.5; 
+    display: flex;
+    /* allows for vertical stacking of children */
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: url('static/images/header-background.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+header .header-content {
+    /* opacity creates a nice effect */
+    background-color: rgba(89, 87, 87, 0.3);
+    padding: 20px;
+}
+
+header h1 {
+    /* using rem here for consistent scaling */
+    font-size: 2.5rem;
+}
+
+nav {
+    background: #194115cf;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    /* removes the bulletpoints from the list style */
+    list-style: none;
+    width: 100%;
+    justify-content: space-around;
+}
+
+nav ul li { 
+    /* padding and font color here */
+    padding: 15px;
+    color: white;
+}
+
+/* changes color when pointer hovers over the nav elements */
+nav ul li:hover {
+    background: #579b14;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+main .main-content {
+    display: flex;
+    flex-direction: column;
+    /* relatively smaller spacing between elements */
+    gap: 15px;
+    width: 100%;
+    /* fit a little bit more text on the page */
+    max-width: 900px;
+}
+
+main .image-container {
+    /* just to get the image centered */
+    text-align: center;
+    margin: 20px 0;
+}
+
+main .content-box {
+    background: #305b2075;
+    font-size:larger;
+    padding: 15px;
+    /* thin boarder, pronounced */
+    border: 1px solid #3d3c3c;
+    text-align: center;
+    /* rounded */
+    border-radius: 25px;
+}
+
+footer {
+    display: flex;
+    /* splits space evenly */
+    justify-content:space-around;
+    background: #194115cf;
+    color: white;
+    padding: 10px;
+}
+
+footer div {
+    padding: 10px;
+}
+
+/* 600px to accomodate mobile devices */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li { 
+        padding: 5px;
+    }
+
+    main {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer div {
+        padding: 5px;
+    }
+}
